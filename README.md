@@ -7,7 +7,7 @@ This project is a lightweight web application that enables users to upload PDF d
 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/pdf-summary-ai.git
+git clone https://github.com/kjlQ/pdf-summary-ai.git
 cd pdf-summary-ai
 ```
 
