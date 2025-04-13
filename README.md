@@ -1,14 +1,14 @@
 ## 🚀 AI-Powered PDF Summarizer Web App
 
-This project is a lightweight web application that enables users to upload PDF documents and receive concise, AI-generated summaries. Built with user-friendly design and seamless functionality, the app leverages OpenAI's API to process the uploaded content and deliver clear, informative summaries in seconds. It's a practical tool for quickly understanding lengthy documents without reading them in full.
+This project is a lightweight web application that enables users to upload PDF documents and receive concise, AI-generated summaries. Built with user-friendly design and seamless functionality, the app leverages OpenAI's API to process the uploaded content and deliver clear. It's a practical tool for quickly understanding lengthy documents without reading them in full.
 
 ## 🛠️ Setup Instructions
 
 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/pdf-summarizer.git
-cd pdf-summarizer
+git clone https://github.com/your-username/pdf-summary-ai.git
+cd pdf-summary-ai
 ```
 
 2. Install Dependencies
