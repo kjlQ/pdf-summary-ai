@@ -56,7 +56,8 @@ export async function POST(req: NextRequest) {
       `${OPENAI_URL}/threads/${threadId}/messages`,
       {
         role: "user",
-        content: "Briefly summarize provided file. Don't ask for additional information - just summarize",
+        content:
+          "Briefly summarize provided file. Don't ask for additional information or appologize for something - just summarize. Appliable summary from 1 sentence",
         attachments: [
           {
             file_id: fileId,

@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useState } from "react";
 
 const UploadFile = () => {
@@ -15,12 +16,12 @@ const UploadFile = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
+      const res = await axios.post("/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
-
-      const data = await res.json();
+      const data = res.data;
 
       if (data.summary) {
         setChatHistory((prev) => [...prev, { fileName: file.name, summary: data.summary }]);
@@ -35,8 +36,8 @@ const UploadFile = () => {
   return (
     <div>
       <div className="flex justify-center mt-10">
-        <label htmlFor="file-upload" className="border-1 rounded-md px-4 py-2 cursor-pointer disabled:opacity-15">
-          📄 Upload PDF for Summary
+        <label htmlFor="file-upload" className="border-1 rounded-md px-4 py-2 cursor-pointer hover:bg-gray-800">
+          Upload PDF for Summary
         </label>
         <input
           id="file-upload"
@@ -81,11 +82,7 @@ const UploadFile = () => {
         <div
           className="flex m-auto mt-5 h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
           role="status"
-        >
-          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-            Loading...
-          </span>
-        </div>
+        ></div>
       )}
     </div>
   );
